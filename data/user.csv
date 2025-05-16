@@ -1,0 +1,11 @@
+id,name,email,department
+1,Nguyễn An,an.nguyen@example.com,Pháp chế
+2,Trần Bình,binh.tran@example.com,Kế toán
+3,Lê Châu,chau.le@example.com,Bảo trì
+4,Phạm Dũng,dung.pham@example.com,Hành chính
+5,Hoàng Hà,ha.hoang@example.com,Kỹ thuật
+6,Phan Huy,huy.phan@example.com,Pháp chế
+7,Vũ Lan,lan.vu@example.com,Hành chính
+8,Đặng Linh,linh.dang@example.com,Kế toán
+9,Bùi Minh,minh.bui@example.com,Bảo trì
+10,Đỗ Ngọc,ngoc.do@example.com,Kỹ thuật

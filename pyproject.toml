@@ -1,0 +1,25 @@
+[project]
+name = "AgentDocumentsManager"
+version = "0.1.0"
+description = "Tìm kiếm thông tin trong thống quản lý tài liệu"
+authors = [{ name = "Trần Nhật Trường", email = "truongbit.devpro@gmail.com" }]
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "crewai[tools]>=0.114.0,<1.0.0",
+    "fuzzywuzzy>=0.18.0",
+    "python-levenshtein>=0.27.1",
+]
+
+[project.scripts]
+nano_agent = "nano_agent.main:run"
+run_crew = "nano_agent.main:run"
+train = "nano_agent.main:train"
+replay = "nano_agent.main:replay"
+test = "nano_agent.main:test"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"

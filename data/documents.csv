@@ -1,0 +1,51 @@
+id,title,code,category,created_date,created_by,building_id,floor_id,room_id,shelf_id,drawer_id,slot_id
+1,Hợp đồng thuê văn phòng,DOC-1001,Pháp lý,2022-04-17,7,3,6,15,23,30,35
+2,Biên bản họp quý I,DOC-1002,Kế toán,2022-06-24,6,2,4,10,15,21,28
+3,Kế hoạch bảo trì hệ thống điện,DOC-1003,Kế toán,2022-09-28,10,3,5,13,19,27,33
+4,Báo cáo tài chính năm 2023,DOC-1004,Hành chính,2022-07-07,9,1,2,4,7,12,16
+5,Thông báo nghỉ lễ,DOC-1005,Kỹ thuật,2022-10-19,3,2,4,9,13,20,27
+6,Quyết định bổ nhiệm trưởng phòng,DOC-1006,Pháp lý,2022-12-20,7,1,1,1,2,3,3
+7,Biên bản kiểm kê tài sản,DOC-1007,Bảo trì,2022-03-13,6,2,3,7,11,17,23
+8,Kế hoạch đào tạo nội bộ,DOC-1008,Kế toán,2022-05-30,4,3,5,12,18,26,31
+9,Báo cáo đánh giá nội bộ,DOC-1009,Pháp lý,2022-08-04,3,2,4,10,15,22,29
+10,Hướng dẫn sử dụng phần mềm kế toán,DOC-1010,Hành chính,2022-09-11,2,1,2,5,8,14,19
+11,Hợp đồng bảo trì máy lạnh,DOC-1011,Kỹ thuật,2022-07-15,5,3,6,14,22,29,34
+12,Biên bản xử lý sự cố mạng,DOC-1012,Hành chính,2022-10-03,8,2,3,6,10,16,22
+13,Kế hoạch phát triển nhân sự,DOC-1013,Pháp lý,2022-11-25,4,1,1,2,3,4,5
+14,Thông báo điều chỉnh lương,DOC-1014,Kỹ thuật,2023-01-08,1,3,5,11,17,25,32
+15,Báo cáo năng suất lao động,DOC-1015,Kế toán,2023-02-14,10,2,3,7,12,18,24
+16,Hướng dẫn PCCC cho nhân viên,DOC-1016,Bảo trì,2022-12-01,1,1,1,1,1,1,1
+17,Biên bản nghiệm thu công trình,DOC-1017,Kỹ thuật,2022-06-10,8,2,4,9,13,20,26
+18,Hợp đồng mua sắm thiết bị,DOC-1018,Hành chính,2023-03-01,6,3,6,15,24,31,36
+19,Chính sách an toàn thông tin,DOC-1019,Bảo trì,2022-07-22,5,2,4,9,14,20,25
+20,Báo cáo kiểm toán nội bộ,DOC-1020,Pháp lý,2022-05-18,9,1,2,5,8,13,17
+21,Biên bản xử lý vi phạm nội quy,DOC-1021,Hành chính,2023-03-20,5,2,3,6,10,15,20
+22,Hướng dẫn nhập liệu phần mềm ERP,DOC-1022,Kế toán,2022-04-05,8,3,6,13,20,27,34
+23,Báo cáo tình trạng thiết bị mạng,DOC-1023,Kỹ thuật,2023-01-25,1,1,1,2,3,5,8
+24,Kế hoạch nâng cấp hệ thống máy tính,DOC-1024,Bảo trì,2022-10-14,9,2,4,9,13,18,24
+25,Quy trình xử lý công văn đến,DOC-1025,Hành chính,2022-06-03,7,3,5,12,18,26,32
+26,Biên bản họp tổng kết năm,DOC-1026,Pháp lý,2023-02-12,6,1,2,4,7,12,17
+27,Hướng dẫn bảo mật thông tin,DOC-1027,Pháp lý,2022-11-01,4,2,3,7,11,16,22
+28,Thông báo tuyển dụng nhân sự mới,DOC-1028,Hành chính,2022-07-08,3,3,6,15,23,31,36
+29,Biên bản kiểm tra an toàn lao động,DOC-1029,Kỹ thuật,2022-09-22,10,2,3,8,12,18,25
+30,Hợp đồng tư vấn pháp lý năm 2023,DOC-1030,Pháp lý,2023-01-03,7,1,2,5,9,14,19
+31,Báo cáo sử dụng ngân sách quý IV,DOC-1031,Kế toán,2022-12-12,6,2,3,6,10,15,21
+32,Hướng dẫn quy trình bảo trì thiết bị,DOC-1032,Bảo trì,2022-08-17,5,3,5,12,19,25,30
+33,Biên bản thanh lý tài sản cố định,DOC-1033,Hành chính,2023-03-15,2,2,4,10,16,22,28
+34,Kế hoạch triển khai đào tạo nhân sự,DOC-1034,Hành chính,2022-11-28,8,1,1,2,3,4,6
+35,Hợp đồng mua sắm vật tư tiêu hao,DOC-1035,Kỹ thuật,2022-06-29,1,3,6,14,20,27,35
+36,Biên bản kiểm tra hệ thống PCCC,DOC-1036,Bảo trì,2022-05-07,10,2,3,7,11,16,21
+37,Báo cáo hiệu suất thiết bị sản xuất,DOC-1037,Kỹ thuật,2023-02-20,9,3,6,15,24,30,36
+38,Hướng dẫn quy trình xử lý sự cố,DOC-1038,Bảo trì,2022-07-14,6,1,2,4,6,8,10
+39,Biên bản bàn giao tài sản,DOC-1039,Hành chính,2022-04-30,4,2,4,9,13,19,25
+40,Hợp đồng dịch vụ bảo vệ tòa nhà,DOC-1040,Pháp lý,2022-09-01,3,3,5,11,17,23,29
+41,Báo cáo kiểm tra chất lượng sản phẩm,DOC-1041,Kỹ thuật,2023-03-18,2,1,1,3,5,7,9
+42,Hướng dẫn sử dụng hệ thống quản lý,DOC-1042,Hành chính,2022-05-25,6,2,3,8,12,17,22
+43,Kế hoạch phát triển công nghệ thông tin,DOC-1043,Kỹ thuật,2022-10-10,9,1,2,4,8,13,18
+44,Quy trình tuyển dụng nhân viên,DOC-1044,Hành chính,2023-01-16,1,2,4,9,14,20,25
+45,Biên bản kiểm tra môi trường làm việc,DOC-1045,Bảo trì,2022-09-19,5,3,6,12,17,23,28
+46,Hợp đồng mua bán thiết bị văn phòng,DOC-1046,Kế toán,2022-12-01,8,2,3,7,10,14,19
+47,Báo cáo tình hình sản xuất tháng 12,DOC-1047,Kỹ thuật,2022-12-10,7,1,2,5,9,13,18
+48,Hướng dẫn bảo dưỡng máy móc,DOC-1048,Bảo trì,2023-03-05,3,3,5,11,16,21,26
+49,Biên bản giải quyết khiếu nại khách hàng,DOC-1049,Hành chính,2022-08-23,10,2,4,8,13,18,24
+50,Kế hoạch phân bổ ngân sách năm 2023,DOC-1050,Kế toán,2022-06-30,4,1,1,3,7,11,15

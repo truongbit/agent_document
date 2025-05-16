@@ -1,0 +1,57 @@
+Cấu trúc dữ liệu hệ thống như sau:
+
+  building.csv: Chứa thông tin tòa nhà lưu tài liệu
+    - id: ID tòa nhà
+    - name: Tên tòa nhà
+
+  floor.csv: Chứa thông tin tầng của toà nhà
+    - id: ID tầng
+    - building_id: ID tòa nhà (Là khoá ngoại của id trong building.csv)
+    - name: Tên tầng
+
+  room.csv: Chứa thông tin phòng của mỗi tầng
+    - id: ID phòng
+    - floor_id: ID tầng (Là khoá ngoại của id trong floor.csv)
+    - name: Tên phòng
+
+  shelf.csv: Chứa thông tin kệ trong mỗi phòng lưu trữ
+    - id: ID kệ
+    - room_id: ID phòng (Là khoá ngoại của id trong room.csv)
+    - name: Tên kệ
+
+  drawer.csv: Chứa thông tin ngăn của mỗi kệ lưu trữ
+    - id: ID ngăn
+    - shelf_id: ID kệ (Là khoá ngoại của id trong shelf.csv)
+    - name: Tên ngăn
+
+  slot.csv: Chứa thông tin hộc của mỗi ngăn lưu trữ
+    - id: ID hộc
+    - drawer_id: ID ngăn (Là khoá ngoại của id trong drawer.csv)
+    - name: Tên hộc
+
+  user.csv: Chứa thông tin người dùng
+    - id: ID người dùng
+    - name: Tên người dùng
+    - email: Email người dùng
+    - department: Phòng ban
+
+  documents.csv: Chứa thông tin tài liệu
+    - id: ID tài liệu
+    - title: Tiêu đề (Tên) tài liệu
+    - code: Mã tài liệu
+    - category: Phân loại tài liệu
+    - created_date: Ngày tạo tài liệu
+    - created_by: ID người tạo/ thêm tài liệu (Là khoá ngoại của id trong user.csv)
+    - building_id: ID tòa nhà lưu trữ (Là khoá ngoại của id trong building.csv)
+    - floor_id: ID tầng lưu trữ (Là khoá ngoại của id trong floor.csv)
+    - room_id: ID phòng lưu trữ (Là khoá ngoại của id trong room.csv)
+    - shelf_id: ID kệ lưu trữ (Là khoá ngoại của id trong shelf.csv)
+    - drawer_id: ID ngăn lưu trữ (Là khoá ngoại của id trong drawer.csv)
+    - slot_id: ID hộc lưu trữ (Là khoá ngoại của id trong slot.csv)
+
+  tracks.csv: Chứa lịch sử thao tác, truy cập (Xem, Sửa, Tải xuống) tài liệu
+    - id: ID thao tác
+    - user_id: ID người dùng (Là khoá ngoại của id trong user.csv)
+    - document_id: ID tài liệu (Là khoá ngoại của id trong documents.csv)
+    - action_date: Thời gian thao tác
+    - action: Hành động (Xem, Sửa, Tải xuống)

@@ -1,0 +1,2 @@
+Đây là một hệ thống quản lý tài liệu.
+Dữ liệu hệ thống hiện đang được lưu dưới dạng CSV.

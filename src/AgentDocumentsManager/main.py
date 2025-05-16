@@ -14,7 +14,7 @@ def run():
         "content": "bản Báo cáo năng suất lao động được tạo ngày nào? Hiện nó đang ở đâu",
     }
     try:
-        Agentdocumentsmanager().crew().kickoff_for_each(inputs=inputs)
+        Agentdocumentsmanager().crew().kickoff(inputs=inputs)
     except Exception as e:
         raise Exception(f"An error occurred while running the crew: {e}")
 # def run():

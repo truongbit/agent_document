@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import sys
 import warnings
-from DocumentsManager.crew import DocumentsManager
+from documents_manager.crew import DocumentsManager
 import os
 
 warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")

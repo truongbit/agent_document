@@ -1,7 +1,7 @@
 [project]
-name = "AgentDocumentsManager"
+name = "documents_manager"
 version = "0.1.0"
-description = "Tìm kiếm thông tin trong thống quản lý tài liệu"
+description = "Hệ thống quản lý tài liệu"
 authors = [{ name = "Trần Nhật Trường", email = "truongbit.devpro@gmail.com" }]
 requires-python = ">=3.10,<3.13"
 dependencies = [
@@ -11,11 +11,11 @@ dependencies = [
 ]
 
 [project.scripts]
-nano_agent = "nano_agent.main:run"
-run_crew = "nano_agent.main:run"
-train = "nano_agent.main:train"
-replay = "nano_agent.main:replay"
-test = "nano_agent.main:test"
+nano_agent = "documents_manager.main:run"
+run_crew = "documents_manager.main:run"
+train = "documents_manager.main:train"
+replay = "documents_manager.main:replay"
+test = "documents_manager.main:test"
 
 [build-system]
 requires = ["hatchling"]

@@ -15,6 +15,7 @@ from .tools import DocumentQueryTool, LocationQueryTool, UserInfoQueryTool
 
 @CrewBase
 class DocumentsManager():
+    """DocumentsManager crew"""
     agents_config = 'config/agents.yaml'
     tasks_config = 'config/tasks.yaml'
 
@@ -22,14 +23,37 @@ class DocumentsManager():
             file_paths=["csv_info.txt","csv_schema.txt"]
     )
 
+    # @agent
+    # def system_coordinator_agent(self) -> Agent:
+    #     return Agent(
+    #         config=self.agents_config['system_coordinator_agent'],
+    #         verbose=True,
+    #     )
+
     @agent
     def data_analyst_agent(self) -> Agent:
         return Agent(
             config=self.agents_config['data_analyst_agent'],
             verbose=True,
-            tools=[DocumentQueryTool(), LocationQueryTool(), UserInfoQueryTool()],
+            tools=[
+                DocumentQueryTool(), 
+                LocationQueryTool(), 
+                UserInfoQueryTool()],
             max_iter=5 # Vòng lặp tối đa khi thực hiện task
         )
+    
+    # @agent
+    # def memory_retrieval_agent(self) -> Agent:
+    #     return Agent(
+    #         config=self.agents_config['memory_retrieval_agent'],
+    #         verbose=True,
+    #     )
+    
+    # @task
+    # def system_coordinator_task(self) -> Task:
+    #     return Task(
+    #         config=self.tasks_config['system_coordinator_task'],
+    #     )
     
     @task
     def data_analyst_task(self) -> Task:
@@ -37,15 +61,23 @@ class DocumentsManager():
             config=self.tasks_config['data_analyst_task'],
         )
     
+    # @task
+    # def memory_retrieval_task(self) -> Task:
+    #     return Task(
+    #         config=self.tasks_config['memory_retrieval_task'],
+    #     )
+    
+    
     @crew
     def crew(self) -> Crew:
-        """"""
+        """Creates DocumentsManager Crew"""
+        # agents = [agent for agent in self.agents if agent != self.system_coordinator_agent()]
         return Crew(
             agents=self.agents, # Automatically created by the @agent decorator
             tasks=self.tasks, # Automatically created by the @task decorator
             process=Process.sequential,
             memory=True,
-            verbose=True,
+            verbose=False,
             # embedder={
             #     "provider": "openai",
             #     "config": {

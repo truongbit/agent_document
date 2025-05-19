@@ -1,21 +1,25 @@
 import os
 import pandas as pd
 from typing import Optional, Dict, Type
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from crewai.tools import BaseTool
 
 class QueryLocationParams(BaseModel):
     """Tham số đầu vào cho LocationQueryTool"""
-    building_id: Optional[int] = None
-    floor_id: Optional[int] = None
-    room_id: Optional[int] = None
-    shelf_id: Optional[int] = None
-    drawer_id: Optional[int] = None
-    slot_id: Optional[int] = None
+    building_id: Optional[int] = Field(None, description="ID của toà nhà")
+    floor_id: Optional[int] = Field(None, description="ID của tầng")
+    room_id: Optional[int] = Field(None, description="ID của phòng")
+    shelf_id: Optional[int] = Field(None, description="ID của kệ")
+    drawer_id: Optional[int] = Field(None, description="ID của ngăn")
+    slot_id: Optional[int] = Field(None, description="ID của hộc")
 
 class LocationQueryTool(BaseTool):
-    name: str = "Search Location Information"
-    description: str = "Công cụ để tìm kiếm thông tin vị trí của tài liệu từ các ID thành phần: building_id, floor_id, room_id, shelf_id, drawer_id, slot_id."
+    name: str = "Tìm kiếm thông tin vị trí"
+    description: str = """
+                        Khi câu hỏi có đề cập đến tìm kiếm 'vị trí', 'nơi lưu giữ' hoặc tìm kiếm 'thông tin tài liệu' có trả về các dữ liệu như 
+                        ID của toà nhà (building_id), ID của tầng (floor_id), ID của phòng (room_id), ID của kệ (shelf_id), ID của ngăn (drawer_id), ID của hộc (slot_id) 
+                        thì áp dụng công cụ này để tìm kiếm thông tin vị trí của tài liệu
+                        """
     args_schema: Type[BaseModel] = QueryLocationParams
 
     def __init__(self, csv_folder: Optional[str] = "data"):

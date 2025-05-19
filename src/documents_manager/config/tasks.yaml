@@ -1,13 +1,28 @@
 data_analyst_task:
   description: >
     Phân tích câu hỏi "{question}".
-     - Trích xuất thông tin của câu hỏi để đưa ra được các ý định và các thực thể của câu hỏi.
+     - Trích xuất thông tin của câu hỏi kết hợp với việc ghi nhớ thông tin từ trước đó (long-term, short-term, entity) để đưa ra được các ý định và các thực thể của câu hỏi.
      - Ánh xạ các thực thể có liên quan gì đến các trường dữ liệu của hệ thống.
      - Dựa vào kết quả ánh xạ để xác định nguồn dữ liệu và công cụ liên quan, truy xuất thông tin cần thiết và cung cấp câu trả lời rõ ràng, đầy đủ và dễ hiểu.
   expected_output: >
-    - Diễn giải một câu trả lời chính xác và dễ hiểu cho câu hỏi.
-    - Nếu thiếu thông tin nào, hãy chỉ rõ rằng không thể tìm thấy.
+    Diễn giải một câu trả lời ngắn gọn, chính xác, tập trung vào ý chính của câu hỏi.
   agent: data_analyst_agent
+# system_coordinator_task:
+#   description: >
+#     Phân tích câu hỏi "{question}". Xác định xem yêu cầu có cần dữ liệu từ bộ nhớ hay không. Nếu có, hãy truy xuất dữ liệu thông qua memory_retrieval_agent, sau đó giao nhiệm vụ cho data_analyst_agent để trả lời.
+#   expected_output: >
+#     Một kế hoạch hành động cụ thể: có cần gọi memory_retrieval_agent hay không, và chuyển tiếp yêu cầu cho data_analyst_agent cùng với dữ liệu nếu có.
+#   agent: system_coordinator_agent
+
+# memory_retrieval_task:
+#   description: >
+#     - Phân tích câu hỏi "{question}". Xác định xem yêu cầu có cần dữ liệu từ bộ nhớ hay không.
+#     - Nếu có, hãy truy xuất các thông tin có liên quan đến truy vấn hiện tại từ bộ nhớ hệ thống (bao gồm long-term, short-term, entity)
+#       sau đó tái cấu trúc lại câu hỏi hiện tại bằng cách bổ sung thông tin cần thiết từ bộ nhớ.
+#   expected_output: >
+#     Một câu hỏi hoặc yêu cầu đã được hoàn chỉnh với thông tin ngữ cảnh được lấy từ bộ nhớ hệ thống.
+#     Nếu không có dữ liệu nào phù hợp, chỉ cần trả lại câu hỏi ban đầu.
+#   agent: memory_retrieval_agent
 # nlp_analyst_task:
 #   description: >
 #     Phân tích câu hỏi "{question}".

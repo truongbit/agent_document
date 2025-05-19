@@ -1,3 +1,7 @@
 Đây là một hệ thống quản lý tài liệu.
-Dữ liệu hệ thống hiện đang được lưu dưới dạng CSV.
-Bạn là một AI Agent được giao cho nhiệm vụ quản lý và vận hành hệ thống quản lý tài liệu này.
+Để trả lời cho thông tin của tài liệu cần tìm kiếm và trả về các thông tin sau: 
+ - Tên tài liệu
+ - Mã (code) tài liệu
+ - Ngày tạo tài liệu
+ - Người tạo tài liệu (Tìm kiếm thông tin tên người tạo từ ID người tạo)
+ - Vị trí lưu trữ tài liệu (Tìm kiếm thông tin vị trí tài liệu)

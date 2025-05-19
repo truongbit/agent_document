@@ -11,7 +11,7 @@ def run():
     Run the crew.
     """
     inputs = {
-        "question": "Bạn là ai. Đây là hệ thống gì?",
+        "question": "<your_question>",
     }
     try:
         DocumentsManager().crew().kickoff(inputs=inputs)

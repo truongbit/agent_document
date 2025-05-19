@@ -13,8 +13,8 @@ class QueryDocumentArgs(BaseModel):
     created_by: Optional[str] = Field(None, description="ID của người tạo tài liệu")
 
 class DocumentQueryTool(BaseTool):
-    name: str = "Search Document Information"
-    description: str = "Công cụ để tìm kiếm thông tin tài liệu theo ID tài liệu, tiêu đề, tên của tài liệu, mã (code) tài liệu hoặc ID người tạo tài liệu"
+    name: str = "Tìm kiếm thông tin tài liệu"
+    description: str = "Công cụ để tìm kiếm thông tin tài liệu khi có tuỳ chọn các dữ liệu như ID tài liệu, tiêu đề, tên của tài liệu, mã (code) tài liệu hoặc ID người tạo tài liệu"
     args_schema: Type[BaseModel] = QueryDocumentArgs
 
     def __init__(self, csv_folder: Optional[str] = "data"):

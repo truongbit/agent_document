@@ -11,8 +11,8 @@ class QueryUserInfoArgs(BaseModel):
     name: Optional[str] = Field(default=None, description="Tên của người dùng/ người tạo tài liệu (có thể không chính xác hoàn toàn)")
 
 class UserInfoQueryTool(BaseTool):
-    name: str = "Search User Information"
-    description: str = "Công cụ để tìm kiếm thông tin của người dùng/ người tạo tài liệu theo ID hoặc tên"
+    name: str = "Tìm kiếm thông tin người dùng/ Người tạo tài liệu"
+    description: str = "Công cụ để tìm kiếm thông tin của người dùng/ người tạo tài liệu khi có tuỳ chọn dữ liệu như ID hoặc tên"
     args_schema: Type[BaseModel] = QueryUserInfoArgs
 
     def __init__(self, csv_folder: Optional[str] = "data"):

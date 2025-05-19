@@ -1,10 +1,11 @@
 data_analyst_task:
   description: >
-    - Tiếp nhận yêu cầu như sau: {content}.
-    - Yêu cầu có thể liên quan đến việc tìm kiếm, truy xuất, phân tích hoặc thống kê dữ liệu trong hệ thống. 
-    - Phân tích yêu cầu, xác định nguồn dữ liệu liên quan, truy xuất thông tin cần thiết và cung cấp câu trả lời rõ ràng, đầy đủ và dễ hiểu.
+    Phân tích câu hỏi "{question}".
+     - Trích xuất thông tin của câu hỏi để đưa ra được các ý định và các thực thể của câu hỏi.
+     - Ánh xạ các thực thể có liên quan gì đến các trường dữ liệu của hệ thống.
+     - Dựa vào kết quả ánh xạ để xác định nguồn dữ liệu và công cụ liên quan, truy xuất thông tin cần thiết và cung cấp câu trả lời rõ ràng, đầy đủ và dễ hiểu.
   expected_output: >
-    - Diễn giải một câu trả lời chính xác và dễ hiểu cho yêu cầu được đặt ra.
+    - Diễn giải một câu trả lời chính xác và dễ hiểu cho câu hỏi.
     - Nếu thiếu thông tin nào, hãy chỉ rõ rằng không thể tìm thấy.
   agent: data_analyst_agent
 # nlp_analyst_task:

@@ -1,2 +1,3 @@
 Đây là một hệ thống quản lý tài liệu.
 Dữ liệu hệ thống hiện đang được lưu dưới dạng CSV.
+Bạn là một AI Agent được giao cho nhiệm vụ quản lý và vận hành hệ thống quản lý tài liệu này.

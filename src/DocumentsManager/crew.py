@@ -14,7 +14,7 @@ from .tools import DocumentQueryTool, LocationQueryTool, UserInfoQueryTool
 # )
 
 @CrewBase
-class Agentdocumentsmanager():
+class DocumentsManager():
     agents_config = 'config/agents.yaml'
     tasks_config = 'config/tasks.yaml'
 
@@ -26,9 +26,9 @@ class Agentdocumentsmanager():
     def data_analyst_agent(self) -> Agent:
         return Agent(
             config=self.agents_config['data_analyst_agent'],
-            verbose=False,
+            verbose=True,
             tools=[DocumentQueryTool(), LocationQueryTool(), UserInfoQueryTool()],
-            max_iter=3 # Vòng lặp tối đa khi thực hiện task
+            max_iter=5 # Vòng lặp tối đa khi thực hiện task
         )
     
     @task
@@ -45,7 +45,7 @@ class Agentdocumentsmanager():
             tasks=self.tasks, # Automatically created by the @task decorator
             process=Process.sequential,
             memory=True,
-            verbose=False,
+            verbose=True,
             # embedder={
             #     "provider": "openai",
             #     "config": {
@@ -53,42 +53,42 @@ class Agentdocumentsmanager():
             #     }
             # },
             # Long-term memory for persistent storage across sessions
-            # long_term_memory = LongTermMemory(
-            #     storage=LTMSQLiteStorage(
-            #         db_path="memories/long_term_memory_storage.db"
-            #     )
-            # ),
+            long_term_memory = LongTermMemory(
+                storage=LTMSQLiteStorage(
+                    db_path="memories/long_term_memory_storage.db"
+                )
+            ),
             # external_memory=ExternalMemory(
             #         embedder_config={
             #             "provider": "mem0", 
             #             "config": {"user_id": "truong.bit-8686"}} # you can provide an entire Mem0 configuration
             # ),
             # Short-term memory for current context using RAG
-            # short_term_memory = ShortTermMemory(
-            #     storage = RAGStorage(
-            #             embedder_config={
-            #                 "provider": "openai",
-            #                 "config": {
-            #                     "model": 'text-embedding-3-small'
-            #                 }
-            #             },
-            #             type="short_term",
-            #             path="memories/"
-            #     )
-            # ),
+            short_term_memory = ShortTermMemory(
+                storage = RAGStorage(
+                        embedder_config={
+                            "provider": "openai",
+                            "config": {
+                                "model": 'text-embedding-3-small'
+                            }
+                        },
+                        type="short_term",
+                        path="memories/"
+                )
+            ),
             # # Entity memory for tracking key information about entities
-            # entity_memory = EntityMemory(
-            #     storage=RAGStorage(
-            #         embedder_config={
-            #             "provider": "openai",
-            #             "config": {
-            #                 "model": 'text-embedding-3-small'
-            #             }
-            #         },
-            #         type="short_term",
-            #         path="memories/"
-            #     )
-            # ),
+            entity_memory = EntityMemory(
+                storage=RAGStorage(
+                    embedder_config={
+                        "provider": "openai",
+                        "config": {
+                            "model": 'text-embedding-3-small'
+                        }
+                    },
+                    type="short_term",
+                    path="memories/"
+                )
+            ),
             knowledge_sources=[self.text_source], # Dùng chung cho mọi agent
             # chat_llm="gpt-4o-mini",
         )

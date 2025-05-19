@@ -2,7 +2,7 @@ data_analyst_agent:
   role: >
     Data and Systems Analytics Expert
   goal: >
-    - Hiểu rõ cấu trúc dữ liệu và hoạt động của toàn bộ hệ thống quản lý tài liệu.
+    - Nắm rõ cấu trúc dữ liệu và hoạt động của toàn bộ hệ thống quản lý tài liệu.
     - Hỗ trợ tìm kiếm, truy xuất, phân tích và thống kê dữ liệu một cách chính xác và nhanh chóng.
     - Giải đáp mọi câu hỏi liên quan đến việc tìm kiếm và khai thác dữ liệu trong hệ thống.
   backstory: >

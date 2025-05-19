@@ -15,7 +15,7 @@ class QueryLocationParams(BaseModel):
 
 class LocationQueryTool(BaseTool):
     name: str = "Search Location Information"
-    description: str = "Công cụ để tìm kiếm thông tin vị trí của tài liệu từ các ID thành phần (building_id, floor_id, room_id, shelf_id, drawer_id, slot_id)."
+    description: str = "Công cụ để tìm kiếm thông tin vị trí của tài liệu từ các ID thành phần: building_id, floor_id, room_id, shelf_id, drawer_id, slot_id."
     args_schema: Type[BaseModel] = QueryLocationParams
 
     def __init__(self, csv_folder: Optional[str] = "data"):

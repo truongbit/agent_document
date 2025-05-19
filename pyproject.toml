@@ -11,7 +11,7 @@ dependencies = [
 ]
 
 [project.scripts]
-nano_agent = "documents_manager.main:run"
+documents_manager = "documents_manager.main:run"
 run_crew = "documents_manager.main:run"
 train = "documents_manager.main:train"
 replay = "documents_manager.main:replay"

@@ -6,33 +6,34 @@ import os
 
 warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
 
-def run():
-    """
-    Run the crew.
-    """
-    inputs = {
-        "question": "<your_question>",
-    }
-    try:
-        DocumentsManager().crew().kickoff(inputs=inputs)
-    except Exception as e:
-        raise Exception(f"An error occurred while running the crew: {e}")
 # def run():
 #     """
-#     Run the crew in a loop.
+#     Run the crew.
 #     """
-#     agent = DocumentsManager().crew()
-
-#     while True:
-#         question = input("Question : ")
-#         if question.strip().lower() == 'exit':
-#             break
-#         inputs = {"question": question}
-#         try:
-#             result = agent.kickoff(inputs=inputs)
-#             print('\033[94mAnswer : \033[0m',result)
-#         except Exception as e:
-#             print(f"Answer error: {e}")
+#     inputs = {
+#         "question": "<your_question>",
+#     }
+#     try:
+#         DocumentsManager().crew().kickoff(inputs=inputs)
+#     except Exception as e:
+#         raise Exception(f"An error occurred while running the crew: {e}")
+def run():
+    """
+    Run the crew in a loop.
+    """
+    agent = DocumentsManager().crew()
+    # a = agent.reset_memories('knowledge')
+    # print('Run the crew')
+    while True:
+        question = input("Question : ")
+        if question.strip().lower() == 'exit':
+            break
+        inputs = {"question": question}
+        try:
+            result = agent.kickoff(inputs=inputs)
+            print('\033[94mAnswer : \033[0m',result)
+        except Exception as e:
+            print(f"Answer error: {e}")
 
 def train():
     """

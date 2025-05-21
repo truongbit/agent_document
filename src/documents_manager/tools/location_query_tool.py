@@ -15,11 +15,9 @@ class QueryLocationParams(BaseModel):
 
 class LocationQueryTool(BaseTool):
     name: str = "Tìm kiếm thông tin vị trí"
-    description: str = """
-                        Khi câu hỏi có đề cập đến tìm kiếm 'vị trí', 'nơi lưu giữ' hoặc tìm kiếm 'thông tin tài liệu' có trả về các dữ liệu như 
-                        ID của toà nhà (building_id), ID của tầng (floor_id), ID của phòng (room_id), ID của kệ (shelf_id), ID của ngăn (drawer_id), ID của hộc (slot_id) 
-                        thì áp dụng công cụ này để tìm kiếm thông tin vị trí của tài liệu
-                        """
+    description: str = (
+        "Công cụ để tìm kiếm thông tin vị trí của tài liệu dựa theo tuỳ chọn dữ liệu như ID của toà nhà, ID của tầng, ID của phòng, ID của kệ, ID của ngăn, ID của hộc"
+    )
     args_schema: Type[BaseModel] = QueryLocationParams
 
     def __init__(self, csv_folder: Optional[str] = "data"):

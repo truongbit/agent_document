@@ -1,53 +1,8 @@
 data_analyst_task:
   description: >
     Phân tích câu hỏi "{question}".
-     - Trích xuất thông tin của câu hỏi kết hợp với việc ghi nhớ thông tin từ trước đó (long-term, short-term, entity) để đưa ra được các ý định và các thực thể của câu hỏi.
-     - Ánh xạ các thực thể có liên quan gì đến các trường dữ liệu của hệ thống.
-     - Dựa vào kết quả ánh xạ để xác định nguồn dữ liệu và công cụ liên quan, truy xuất thông tin cần thiết và cung cấp câu trả lời rõ ràng, đầy đủ và dễ hiểu.
+     - Dựa vào nguồn kiến thức của bạn về cấu trúc dữ liệu và bảng trong hệ thống quản lý tài liệu hãy lựa chọn nguồn dữ liệu và công cụ phù hợp để truy xuất thông tin cần thiết.
+     - Trình bày câu trả lời một cách rõ ràng, đầy đủ và dễ hiểu cho người dùng.
   expected_output: >
-    Diễn giải một câu trả lời ngắn gọn, chính xác, tập trung vào ý chính của câu hỏi.
+    Một câu trả lời ngắn gọn, chính xác, phản ánh đúng trọng tâm câu hỏi và được diễn giải dễ hiểu.
   agent: data_analyst_agent
-# system_coordinator_task:
-#   description: >
-#     Phân tích câu hỏi "{question}". Xác định xem yêu cầu có cần dữ liệu từ bộ nhớ hay không. Nếu có, hãy truy xuất dữ liệu thông qua memory_retrieval_agent, sau đó giao nhiệm vụ cho data_analyst_agent để trả lời.
-#   expected_output: >
-#     Một kế hoạch hành động cụ thể: có cần gọi memory_retrieval_agent hay không, và chuyển tiếp yêu cầu cho data_analyst_agent cùng với dữ liệu nếu có.
-#   agent: system_coordinator_agent
-
-# memory_retrieval_task:
-#   description: >
-#     - Phân tích câu hỏi "{question}". Xác định xem yêu cầu có cần dữ liệu từ bộ nhớ hay không.
-#     - Nếu có, hãy truy xuất các thông tin có liên quan đến truy vấn hiện tại từ bộ nhớ hệ thống (bao gồm long-term, short-term, entity)
-#       sau đó tái cấu trúc lại câu hỏi hiện tại bằng cách bổ sung thông tin cần thiết từ bộ nhớ.
-#   expected_output: >
-#     Một câu hỏi hoặc yêu cầu đã được hoàn chỉnh với thông tin ngữ cảnh được lấy từ bộ nhớ hệ thống.
-#     Nếu không có dữ liệu nào phù hợp, chỉ cần trả lại câu hỏi ban đầu.
-#   agent: memory_retrieval_agent
-# nlp_analyst_task:
-#   description: >
-#     Phân tích câu hỏi "{question}".
-#      - Trích xuất thông tin của câu hỏi để đưa ra được các ý định của câu hỏi và các thực thể.
-#      - Ánh xạ các thực thể có liên quan gì đến các trường dữ liệu của hệ thống.
-#      - Dựa vào kết quả ánh xạ để truy vấn tới dữ liệu hệ thống.
-#   expected_output: >
-#     - Trả lời câu hỏi của người dùng bằng cách diễn giải từ kết quả tìm được.
-#     - Nếu thiếu thông tin nào, hãy chỉ rõ rằng không thể tìm thấy.
-#   agent: nlp_analyst_agent
-# data_analysis_task:
-#   description: >
-#     Phân tích cấu trúc dữ liệu của hệ thống.
-#   expected_output: >
-#     Hiểu được cấu trúc dữ liệu của bài toán.
-#   agent: data_analyst_agent
-
-# nlp_analysis_task:
-#   description: >
-#     Phân tích câu hỏi người dùng: "{question}"
-#     - Trích xuất các thực thể quan trọng.
-#     - Xác định ý định chính của câu hỏi.
-#     - Nếu có thể, ánh xạ vào các trường dữ liệu hoặc bảng có liên quan.
-#     - Dựa vào kết quả ánh xạ để truy vấn tới dữ liệu hệ thống.
-#   expected_output: >
-#     - Trả lời câu hỏi của người dùng bằng cách diễn giải từ kết quả tìm được.
-#     - Nhận định xem có đủ thông tin để trả lời không. Nếu thiếu thông tin nào, hãy chỉ rõ rằng không thể tìm thấy.
-#   agent: nlp_analyst_agent

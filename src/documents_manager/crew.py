@@ -28,14 +28,14 @@ class DocumentsManager():
     def data_analyst_agent(self) -> Agent:
         return Agent(
             config=self.agents_config['data_analyst_agent'],
-            verbose=True,
-            allow_delegation=False, # Không uỷ quyền cho Agent khác
-            knowledge_sources=[self.text_source],
+            verbose=False,
+            allow_delegation=False, # Không uỷ quyền thực hiện Task cho Agent khác
+            knowledge_sources=[self.text_source], # Cần thiết vì hiện tại Agent chưa có knowledge storage. Nếu không có thì sẽ không query được knowledge.
             tools=[
                 DocumentQueryTool(), 
                 LocationQueryTool(), 
                 UserInfoQueryTool()],
-            max_iter=5 # Vòng lặp tối đa khi thực hiện task
+            max_iter=5 # Vòng lặp tối đa khi thực hiện Task
         )
     
     
@@ -53,7 +53,7 @@ class DocumentsManager():
             agents=self.agents, # Automatically created by the @agent decorator
             tasks=self.tasks, # Automatically created by the @task decorator
             process=Process.sequential,
-            knowledge_sources=[self.text_source],
+            knowledge_sources=[self.text_source], # Dùng cho mọi Agent
             memory=True,
             verbose=False,
             # embedder={
@@ -63,41 +63,41 @@ class DocumentsManager():
             #     }
             # },
             # Long-term memory for persistent storage across sessions
-            # long_term_memory = LongTermMemory(
-            #     storage=LTMSQLiteStorage(
-            #         db_path="memories/long_term_memory_storage.db"
-            #     )
-            # ),
+            long_term_memory = LongTermMemory(
+                storage=LTMSQLiteStorage(
+                    db_path="memories/long_term_memory_storage.db"
+                )
+            ),
             # external_memory=ExternalMemory(
             #         embedder_config={
             #             "provider": "mem0", 
             #             "config": {"user_id": "truong.bit-8686"}} # you can provide an entire Mem0 configuration
             # ),
             # Short-term memory for current context using RAG
-            # short_term_memory = ShortTermMemory(
-            #     storage = RAGStorage(
-            #             embedder_config={
-            #                 "provider": "openai",
-            #                 "config": {
-            #                     "model": 'text-embedding-3-small'
-            #                 }
-            #             },
-            #             type="short_term",
-            #             path="memories/"
-            #     )
-            # ),
+            short_term_memory = ShortTermMemory(
+                storage = RAGStorage(
+                        embedder_config={
+                            "provider": "openai",
+                            "config": {
+                                "model": 'text-embedding-3-small'
+                            }
+                        },
+                        type="short_term",
+                        path="memories/"
+                )
+            ),
             # # Entity memory for tracking key information about entities
-            # entity_memory = EntityMemory(
-            #     storage=RAGStorage(
-            #         embedder_config={
-            #             "provider": "openai",
-            #             "config": {
-            #                 "model": 'text-embedding-3-small'
-            #             }
-            #         },
-            #         type="short_term",
-            #         path="memories/"
-            #     )
-            # ),
+            entity_memory = EntityMemory(
+                storage=RAGStorage(
+                    embedder_config={
+                        "provider": "openai",
+                        "config": {
+                            "model": 'text-embedding-3-small'
+                        }
+                    },
+                    type="short_term",
+                    path="memories/"
+                )
+            ),
             # chat_llm="gpt-4o-mini",
         )

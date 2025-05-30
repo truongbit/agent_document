@@ -13,6 +13,7 @@ dependencies = [
 [project.scripts]
 documents_manager = "documents_manager.main:run"
 run_crew = "documents_manager.main:run"
+reset_memories = "documents_manager.main:reset_memories"
 train = "documents_manager.main:train"
 replay = "documents_manager.main:replay"
 test = "documents_manager.main:test"

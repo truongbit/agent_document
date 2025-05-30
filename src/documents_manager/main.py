@@ -5,7 +5,6 @@ from documents_manager.crew import DocumentsManager
 import os
 
 warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
-
 # def run():
 #     """
 #     Run the crew.
@@ -22,8 +21,6 @@ def run():
     Run the crew in a loop.
     """
     agent = DocumentsManager().crew()
-    # a = agent.reset_memories('knowledge')
-    # print('Run the crew')
     while True:
         question = input("Question : ")
         if question.strip().lower() == 'exit':
@@ -70,3 +67,13 @@ def test():
 
     except Exception as e:
         raise Exception(f"An error occurred while testing the crew: {e}")
+    
+def reset_memories():
+    """
+    Reset Memories Crew.
+    """
+    try:
+        DocumentsManager().crew().reset_memories('all')
+
+    except Exception as e:
+        raise Exception(f"An error occurred while reset memories the crew: {e}")

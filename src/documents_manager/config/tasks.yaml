@@ -4,5 +4,6 @@ data_analyst_task:
      - Dựa vào nguồn kiến thức của bạn về cấu trúc dữ liệu và bảng trong hệ thống quản lý tài liệu hãy lựa chọn nguồn dữ liệu và công cụ phù hợp để truy xuất thông tin cần thiết.
      - Trình bày câu trả lời một cách rõ ràng, đầy đủ và dễ hiểu cho người dùng.
   expected_output: >
-    Một câu trả lời ngắn gọn, chính xác, phản ánh đúng trọng tâm câu hỏi và được diễn giải dễ hiểu.
+    - Một câu trả lời ngắn gọn, chính xác, phản ánh đúng trọng tâm câu hỏi và được diễn giải dễ hiểu. 
+    - Nếu thiếu thông tin nào, hãy chỉ rõ rằng không thể tìm thấy.
   agent: data_analyst_agent
